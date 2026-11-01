@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Agency</title>
+    <link rel="stylesheet" href="mycompani.css">
+</head>
+<body>
+<!--ნავიგაცია-->
+   <header>
+        <div class="header-container">
+            <div class="logo-box">
+                <img src="./img/globalwebservis.jpg" alt="Global WebServis Logo" class="logo-img">
+                <span class="logo-text">
+                    <span class="dark-blue">Global</span><span class="light-blue">WebServis</span>
+                </span>
+            </div>
+
+            <div class="nav-right">
+                <nav>
+                    <!-- აი აქ, data-i18n-ით მოვნიშნეთ სიტყვები თარგმნისთვის -->
+                    <a href="#services" class="scroll-link" data-i18n="nav_services">სერვისები</a>
+                    <a href="#booking" class="scroll-link" data-i18n="nav_booking">დაჯავშნა</a>
+                </nav>
+                
+                <div class="lang-selector">
+                    <button class="lang-btn" onclick="toggleLangMenu()">
+                        🌐 <span id="current-lang">GE</span> ▼
+                    </button>
+                    <div class="lang-dropdown" id="langDropdown">
+                        <a href="#" onclick="changeLanguage('GE')">ქართული (GE)</a>
+                        <a href="#" onclick="changeLanguage('EN')">English (EN)</a>
+                        <a href="#" onclick="changeLanguage('RU')">Русский (RU)</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+   
+    <!-- მთავარი სექცია (Hero) -->
+    <section class="hero">
+        <h1 data-i18n="hero_title">შევქმნათ თქვენი კომპანიისთვის მორგებული ვებსაიტი</h1>
+        <p data-i18n="hero_desc">თანამედროვე დიზაინი, სწრაფი მუშაობა და სრული მხარდაჭერა.</p>
+        <a href="#booking" class="btn scroll-link" data-i18n="hero_btn">დაჯავშნე ახლავე</a>
+    </section>
+<!-- სერვისები -->
+    <section id="services" class="services">
+        <h2 data-i18n="services_title">რას გთავაზობთ</h2>
+        <div class="grid-container">
+            <div class="card">
+                <div class="card-icon">💻</div>
+                <h3 data-i18n="service_1_title">საინფორმაციო საიტები</h3>
+                <p data-i18n="service_1_desc">შენი ბიზნესის სრული წარდგენა ინტერნეტში თანამედროვე დიზაინით.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">📱</div>
+                <h3 data-i18n="service_2_title">ციფრული მენიუები</h3>
+                <p data-i18n="service_2_desc">QR მენიუები კაფეებისა და რესტორნებისთვის მოსახერხებელი ინტერფეისით.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">⚙️</div>
+                <h3 data-i18n="service_3_title">მორგებული პროექტები</h3>
+                <p data-i18n="service_3_desc">ნებისმიერი სირთულის ვებ-აპლიკაცია და ინდივიდუალური გადაწყვეტილებები.</p>
+            </div>
+        </div>
+    </section>
+<!-- დაჯავშნა და კონტაქტი -->
+    <section id="booking" class="booking">
+        <div class="booking-container">
+            
+            <!-- მარცხენა ბლოკი: ფორმა -->
+            <div class="booking-form-box">
+                <h2 data-i18n="booking_title">დაგვიკავშირდი და დაჯავშნე</h2>
+                <form action="https://formspree.io/f/mwllbjzy" method="POST" id="bookingForm">
+                    <input type="text" name="სახელი" placeholder="შენი სახელი" required>
+                    <input type="email" name="ელ_ფოსტა" placeholder="ელ. ფოსტა" required>
+                    
+                    <select name="სერვისი" required>
+                        <option value="" data-i18n="form_select_default">აირჩიე სერვისი...</option>
+                        <option value="საინფორმაციო" data-i18n="form_opt_1">საინფორმაციო საიტი</option>
+                        <option value="მენიუ" data-i18n="form_opt_2">ციფრული მენიუ</option>
+                        <option value="სხვა" data-i18n="form_opt_3">სხვა</option>
+                    </select>
+                    
+                    <button type="submit" class="btn" data-i18n="form_submit">გაგზავნა</button>
+                </form>
+                
+                <p id="successMessage" style="display: none; color: #00a6e2; margin-top: 15px; font-weight: bold;" data-i18n="form_success">
+                    მოთხოვნა წარმატებით გაიგზავნა!
+                </p>
+            </div>
+
+            <!-- მარჯვენა ბლოკი: საკონტაქტო ინფო -->
+            <div class="contact-info">
+                <h2 data-i18n="contact_title">საკონტაქტო ინფორმაცია</h2>
+                <p>📞 +995 511 19 12 74</p>
+                <p>✉️ globalwebservis@gmail.com</p>
+                
+                <div class="socials">
+                    <a href="https://www.instagram.com/globalwebservis?cplk=MW9qMnN4dWxjaW5vbg==" target="_blank">Instagram</a>
+                    <a href="https://www.facebook.com/share/18VasSw7Qr/?mibextid=wwXIfr" target="_blank">Facebook</a>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+    <script src="mycompani.js"></script>
+</body>
+</html>
