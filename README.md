@@ -1,1 +1,0 @@
-# GlobalWebServis1.github.io
